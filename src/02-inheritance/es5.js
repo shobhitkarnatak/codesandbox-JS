@@ -20,6 +20,11 @@ Alert.prototype.toUpperCase = function() {
   console.log(this.title.toUpperCase());
 };
 
+// static
+Alert.logger = function() {
+  console.log("static value return");
+};
+
 function SuccessAlert(title) {
   Alert.call(this, title);
   this.type = "success";
@@ -27,5 +32,12 @@ function SuccessAlert(title) {
 
 SuccessAlert.prototype = Object.create(Alert.prototype);
 SuccessAlert.prototype.constructor = SuccessAlert;
+
+SuccessAlert.prototype.logData = function() {
+  console.log("log data from success alert");
+};
+
 const sa = new SuccessAlert("successAlert");
-console.log(sa);
+console.log(sa.logData());
+
+console.log(Alert.logger());

@@ -1,19 +1,34 @@
-class Member extends Alert {
-  constructor(title, memberPackages) {
-    super(title);
-    this.packages = memberPackages;
+class Alert {
+  // static method
+  static logger() {
+    console.log("static method attched");
+  }
+  constructor(title) {
+    this.title = title || "Default   Alert";
   }
 
-  //3> static: without creating objects & can not be called through class instance
-  static count(title) {
-    // console.log(`the total count is+ ${title}`);
-  }
-
-  getPackage() {
-    // console.log(`Packages name is ${this.packages}`);
+  toUpperCase() {
+    console.log(this.title.toUpperCase());
   }
 }
 
-Member.count("50"); //static
-let bob = new Member("alert", "handwash");
-bob.getPackage();
+class SuccessAlert extends Alert {
+  constructor(title) {
+    super(title);
+    this.type = "success";
+  }
+
+  // method override
+  toUpperCase() {
+    console.log(this.title.toUpperCase());
+  }
+}
+
+// Instantiated in the object
+let sa = new SuccessAlert("Success Alert");
+console.log(sa.toUpperCase());
+
+let a = new Alert("Alert");
+console.log(a.toUpperCase());
+
+console.log(Alert.logger());
