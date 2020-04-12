@@ -1,7 +1,7 @@
 /**
  *  1. what is constructor function
  */
-
+//tHIS IF FORKED CODESANDBOX JS
 // create add function
 
 function add(a, b) {
@@ -10,7 +10,7 @@ function add(a, b) {
 
 let final = add(2, 4);
 console.log(final);
-
+//
 const a = "shobhit";
 const b = 1;
 
